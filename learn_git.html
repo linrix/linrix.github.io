@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="Keywords" content="blog"/>
+    <meta name="Description" content="blog"/>
+    <title>Simple</title>
+    <link rel="shortcut icon" href="/static/favicon.png"/>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+<div class="main">
+    <div class="header">
+    	<ul id="pages">
+            <li><a href="/">home</a></li>
+            <li><a href="/#/tags">tags</a></li>
+            <li><a href="/#/archive">archive</a></li>
+    	</ul>
+    </div>
+	<div class="wrap-header">
+	<h1>
+    <a href="/" id="title"></a>
+	</h1>
+	</div>
+<div id="md" style="display: none;">
+<!-- markdown -->
+1. 安装
+mac 使用homebrew， [http://brew.sh](http://brew.sh)
+
+windows下的git https://git-for-windows.github.io/
+
+2. 丢弃工作区修改，git checkout -- file
+3. 丢弃暂存区修改 git reset HEAD file，然后再git checkout --file
+4.  存储现场 git stash， 恢复现场git stash pop，查看git stash list
+5. 推送远程修改 git push origin master，推送分支 git push origin dev
+6. 在本地创建并推送分支 git checkout -b dev origin/dev
+7. 如果推送失败需要先关联，再pull，再推送
+git branch --set-upstream dev origin/dev
+git pull
+git push origin master/dev
+8. git config --global user.name "Your Name"
+9. git config --global user.email "email@example.com"
+10. 关联远程库 git remote add origin git://github.com/linrix/xxx.git
+
+首次推送：git push -u origin master
+
+以后：git push origin master
+<!-- markdown end -->
+</div>
+<div class="entry" id="main">
+<!-- content -->
+<ol>
+<li>安装
+mac 使用homebrew， <a href="http://brew.sh">http://brew.sh</a></li>
+</ol>
+
+<p>windows下的git https://git-for-windows.github.io/</p>
+
+<ol>
+<li>丢弃工作区修改，git checkout -- file</li>
+<li>丢弃暂存区修改 git reset HEAD file，然后再git checkout --file</li>
+<li>存储现场 git stash， 恢复现场git stash pop，查看git stash list</li>
+<li>推送远程修改 git push origin master，推送分支 git push origin dev</li>
+<li>在本地创建并推送分支 git checkout -b dev origin/dev</li>
+<li>如果推送失败需要先关联，再pull，再推送
+git branch --set-upstream dev origin/dev
+git pull
+git push origin master/dev</li>
+<li>git config --global user.name "Your Name"</li>
+<li>git config --global user.email "email@example.com"</li>
+<li>关联远程库 git remote add origin git://github.com/linrix/xxx.git</li>
+</ol>
+
+<p>首次推送：git push -u origin master</p>
+
+<p>以后：git push origin master</p>
+<!-- content end -->
+</div>
+<br>
+<br>
+    <div id="disqus_thread"></div>
+	<div class="footer">
+		<p>© Copyright 2014 by isnowfy, Designed by isnowfy</p>
+	</div>
+</div>
+<script src="main.js"></script>
+<script id="content" type="text/mustache">
+    <h1>{{title}}</h1>
+    <div class="tag">
+    {{date}}
+    {{#tags}}
+    <a href="/#/tag/{{name}}">#{{name}}</a>
+    {{/tags}}
+    </div>
+</script>
+<script id="pagesTemplate" type="text/mustache">
+    {{#pages}}
+    <li>
+        <a href="{{path}}">{{title}}</a>
+    </li>
+    {{/pages}}
+</script>
+<script>
+$(document).ready(function() {
+    $.ajax({
+        url: "main.json",
+        type: "GET",
+        dataType: "json",
+        success: function(data) {
+            $("#title").html(data.name);
+            var pagesTemplate = Hogan.compile($("#pagesTemplate").html());
+            var pagesHtml = pagesTemplate.render({"pages": data.pages});
+            $("#pages").append(pagesHtml);
+            //path
+            var path = "learn_git.html";
+            //path end
+            var now = 0;
+            for (var i = 0; i < data.posts.length; ++i)
+                if (path == data.posts[i].path)
+                    now = i;
+            var post = data.posts[now];
+            var tmp = post.tags.split(" ");
+            var tags = [];
+            for (var i = 0; i < tmp.length; ++i)
+                if (tmp[i].length > 0)
+                    tags.push({"name": tmp[i]});
+            var contentTemplate = Hogan.compile($("#content").html());
+            var contentHtml = contentTemplate.render({"title": post.title, "tags": tags, "date": post.date});
+            $("#main").prepend(contentHtml);
+            if (data.disqus_shortname.length > 0) {
+                var disqus_shortname = data.disqus_shortname;
+                (function() {
+                    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            }
+        }
+    });
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ["\\(", "\\)"]], processEscapes: true}});
+</script>
+</body>
+</html>
