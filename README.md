@@ -1,1 +1,0 @@
-# linrix.github.io
