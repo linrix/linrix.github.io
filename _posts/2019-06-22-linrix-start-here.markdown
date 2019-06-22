@@ -16,11 +16,11 @@ mathjax: true
 
 1.注册github，申请xxx.github.io,这个可以参考网上流传
 
-2.基于docker搭建本地jekyll环境参考[这里]（http://archerwq.cn/2017/09/21/setup-jekyll-locally-with-docker/）
+2.基于docker搭建本地jekyll环境参考[教程](http://archerwq.cn/2017/09/21/setup-jekyll-locally-with-docker/）
 
 3.将你的xxx.github.io clone到本地，并参考步骤2绑定路径
 
-4.从[这里](https://github.com/Gaohaoyang/gaohaoyang.github.io)克隆一份代码，并参考说明修改
+4.从[gaohaoyang.github.io](https://github.com/Gaohaoyang/gaohaoyang.github.io)克隆一份代码，并参考说明修改
 
 5.后续就可以在_posts目录新建文章进行编辑
 
