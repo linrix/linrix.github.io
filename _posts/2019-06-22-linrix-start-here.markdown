@@ -16,7 +16,7 @@ mathjax: true
 
 1.注册github，申请xxx.github.io,这个可以参考网上流传
 
-2.基于docker搭建本地jekyll环境参考[教程](http://archerwq.cn/2017/09/21/setup-jekyll-locally-with-docker/）
+2.基于docker搭建本地jekyll环境参考[教程](http://archerwq.cn/2017/09/21/setup-jekyll-locally-with-docker/)
 
 3.将你的xxx.github.io clone到本地，并参考步骤2绑定路径
 
