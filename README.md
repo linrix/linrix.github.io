@@ -184,4 +184,4 @@ If there is nothing wrong, push code to your github!
 
 ## License
 
-[MIT License](https://github.com/linrix/linrix.github.io/blob/master/LICENSE.md)
+[MIT License](https://github.com/linrix/linrix.github.io/blob/master/LICENSE)
