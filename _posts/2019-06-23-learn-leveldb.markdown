@@ -8,6 +8,9 @@ excerpt: 简单记录一下
 mathjax: true
 ---
 
+* content
+{:toc}
+
 #### 前方高能！
 [leveldb](https://github.com/google/leveldb)
 

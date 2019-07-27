@@ -8,6 +8,9 @@ excerpt: 第一篇文章，权当sample吧
 mathjax: true
 ---
 
+* content
+{:toc}
+
 ### 今天天气真热！
 
 *我要吃雪糕*
