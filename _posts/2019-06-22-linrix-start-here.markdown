@@ -5,6 +5,7 @@ date:   2019-06-22 17:14:54
 categories: linrix
 tags: first start diary
 excerpt: 第一篇文章，权当sample吧
+author: linrix
 mathjax: true
 ---
 
