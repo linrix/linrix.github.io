@@ -1,11 +1,5 @@
  About this Cool Concise Jekyll Blog Theme 🤘🤘🤘
 
-[![GitHub stars](https://img.shields.io/github/stars/linrix/linrix.github.io.svg)](https://github.com/linrix/linrix.github.io/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/linrix/linrix.github.io.svg)](https://github.com/linrix/linrix.github.io/network)
-[![GitHub issues](https://img.shields.io/github/issues/linrix/linrix.github.io.svg)](https://github.com/linrix/linrix.github.io/issues)
-[![GitHub release](https://img.shields.io/github/release/linrix/linrix.github.io.svg)](https://github.com/linrix/linrix.github.io/releases)
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/linrix/linrix.github.io/master/LICENSE)
-
 ## Content
 
 * [Usage](#usage)
@@ -42,7 +36,6 @@ There may be something wrong at mac OS X El Capitan, you can see the solution at
 
 If you are interesting in jekyll, you can see the jekyll source code at [https://github.com/jekyll/jekyll](https://github.com/jekyll/jekyll).
 
-![jekyll logo](http://jekyllcn.com/img/logo-2x.png)
 
 ### 2. Copy theme code
 
@@ -91,7 +84,7 @@ Visit https://disqus.com/ or http://duoshuo.com/. And follow the prompts at the 
 ```yml
 # comments
 # two ways to comment, only choose one, and use your own short name
-duoshuo_shortname: #hygblog
+duoshuo_shortname: xxxx
 disqus_shortname: xxxx
 ```
 
